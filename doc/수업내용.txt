@@ -1,0 +1,2 @@
+﻿yarn - javascript 패키지 매니저
+머큐리 - 형상관리 툴
