@@ -8,3 +8,10 @@ bootstrap3 -> 4의 차이는 flex
 css1 block -> css2 inline-block -> css3 flex
 
 w3c -> draft -> standard -> RFC
+
+assets폴더 -> 이미지 등 고정파일
+
+javascript -> RFC로 정의가 되어있음
+	- core
+	- DOM
+	- BOM

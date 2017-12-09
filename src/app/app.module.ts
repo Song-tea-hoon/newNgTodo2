@@ -10,6 +10,7 @@ import { AngularComponent } from './angular/angular.component';
 import { AppRoutingModule } from './app-routing.module';
 import {MatCardModule, MatIconModule, MatMenuModule, MatToolbarModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FlexLayoutModule,
     MatMenuModule,
     MatIconModule,
     MatToolbarModule,
