@@ -10,6 +10,8 @@ import {UserService} from '../user.service';
 export class AngularComponent implements OnInit {
 
   todoList = new Array<TodoVO>();
+  // 할일 추가를 위한 객체
+  newTodo = new TodoVO();
 
   constructor(private userService: UserService) {
   }
@@ -24,6 +26,13 @@ export class AngularComponent implements OnInit {
       .then((data: Array<TodoVO>) => {
         this.todoList = data;
         console.log(data);
+      });
+  }
+
+  addTodo() {
+    this.userService.addTodoList(this.newTodo)
+      .then((data: TodoVO) => {
+        this.todoList.unshift(data);
       });
   }
 
