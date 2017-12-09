@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { JqueryComponent } from './jquery/jquery.component';
 import { AngularComponent } from './angular/angular.component';
 import { AppRoutingModule } from './app-routing.module';
+import {MatToolbarModule} from '@angular/material';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

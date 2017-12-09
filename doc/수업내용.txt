@@ -1,3 +1,6 @@
 ﻿yarn - javascript 패키지 매니저
 머큐리 - 형상관리 툴
 get it - 리뷰 시스템(다른 리뷰시스템도 확인)
+amp
+
+bootstrap3 -> 4의 차이는 flex
