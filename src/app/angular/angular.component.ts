@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TodoVO} from '../domain/todo.vo';
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'app-angular',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AngularComponent implements OnInit {
 
-  constructor() { }
+  todoList = new Array<TodoVO>();
 
-  ngOnInit() {
+  constructor(private userService: UserService) {
   }
 
+  ngOnInit() {
+    this.getTodoList();
+  }
+
+  getTodoList() {
+    console.log('getTodoList');
+    this.userService.getTodoList()
+      .then((data: Array<TodoVO>) => {
+        this.todoList = data;
+        console.log(data);
+      });
+  }
+
+  update(item: TodoVO) {
+    //item
+  }
 }
