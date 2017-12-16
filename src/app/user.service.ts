@@ -25,4 +25,9 @@ export class UserService {
       .toPromise();
 
   }
+
+  modifyTodo(params: TodoVO) {
+    return this.http.put(this.SERVER + '/api/todo', params, {headers: this.headers})
+      .toPromise();
+  }
 }

@@ -54,11 +54,11 @@ export class AngularComponent implements OnInit {
   save(item: TodoVO) {
     item.isEdited = true;
 
-    const tempTodo = new TodoVO();
-    tempTodo.todo = item.todo;
-    tempTodo.created = item.created;
-    tempTodo.updated = item.updated;
-
+    // const tempTodo = new TodoVO();
+    // tempTodo.todo = item.todo;
+    // tempTodo.created = item.created;
+    // tempTodo.updated = item.updated;
+    const tempTodo: TodoVO = { ...item };
     this.tempTodoList.set(item.todo_id, tempTodo);
   }
 
@@ -66,8 +66,14 @@ export class AngularComponent implements OnInit {
 
   }
 
-  modify() {
-
+  modify(item: TodoVO) {
+    console.log("modify");
+    this.userService.modifyTodo(item)
+      .then((res: TodoVO) => {
+        item.todo = res.todo;
+        item.updated = res.updated;
+        item.isEdited = false;
+      });
   }
 
   restore(item: TodoVO) {
