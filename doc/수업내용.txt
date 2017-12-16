@@ -18,5 +18,8 @@ javascript -> RFC로 정의가 되어있음
 
 백틱 / 컬리브레이스
 
-predicate -> 유효성검사 
+predicate -> 유효성검사
 predicate 함수 -> test
+
+privitive 값
+reference 주소값

@@ -20,7 +20,7 @@ export class UserService {
     return this.http.get(this.SERVER + '/api/todo').toPromise();
   }
 
-  addTodoList(params: TodoVO) {
+  addTodo(params: TodoVO) {
     return this.http.post(this.SERVER + '/api/todo', JSON.stringify(params), {headers: this.headers})
       .toPromise();
 

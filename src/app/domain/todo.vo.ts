@@ -5,4 +5,5 @@ export class  TodoVO
   todo: string;
   created: string;
   updated: string;
+  isEdited: boolean = false;
 }
