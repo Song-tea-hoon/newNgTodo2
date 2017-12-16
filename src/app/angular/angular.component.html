@@ -27,13 +27,13 @@
       </thead>
       <tbody>
       <ng-template ngFor let-item [ngForOf]="todoList">
-        <tr *ngIf="!item.isEdited" [@flyInOut] = "'in'">
+        <tr *ngIf="!item.isEdited" [@flyInOut] = "'in'" appHighlight [highlightColor]="'#ea5b5b'">
           <td>
             {{item.isFinished ? '완료' : '미완료'}}
           </td>
           <td [class.todo_canceled]="item.isFinished">{{item.todo}}</td>
-          <td>{{item.created}}</td>
-          <td>{{item.updated}}</td>
+          <td>{{item.created | mydate: '16'}}</td>
+          <td>{{item.updated | date:'short'}}</td>
           <td>
             <button mat-raised-button color="accent" (click)="save(item)">수정</button>
             <button mat-raised-button color="warn" (click)="remove(item)">삭제</button>

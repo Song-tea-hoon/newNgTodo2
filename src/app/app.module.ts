@@ -17,6 +17,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {UserService} from './user.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { HighlightDirective } from './highlight.directive';
+import { MydatePipe } from './mydate.pipe';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import {FormsModule} from '@angular/forms';
     IndexComponent,
     HomeComponent,
     JqueryComponent,
-    AngularComponent
+    AngularComponent,
+    HighlightDirective,
+    MydatePipe
   ],
   imports: [
     BrowserModule,
