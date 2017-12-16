@@ -30,4 +30,8 @@ export class UserService {
     return this.http.put(this.SERVER + '/api/todo', params, {headers: this.headers})
       .toPromise();
   }
+
+  deleteTodo(todo_id: number) {
+    return this.http.delete(this.SERVER + `/api/todo?todo_id=${todo_id}`).toPromise();
+  }
 }

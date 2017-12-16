@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {TodoVO} from '../domain/todo.vo';
 import {UserService} from '../user.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {ResultFunc} from 'rxjs/observable/GenerateObservable';
+import {ResultVO} from '../domain/result.vo';
 
 @Component({
   selector: 'app-angular',
@@ -58,16 +60,28 @@ export class AngularComponent implements OnInit {
     // tempTodo.todo = item.todo;
     // tempTodo.created = item.created;
     // tempTodo.updated = item.updated;
-    const tempTodo: TodoVO = { ...item };
+    const tempTodo: TodoVO = {...item};
     this.tempTodoList.set(item.todo_id, tempTodo);
   }
 
-  remove() {
+  remove(item: TodoVO) {
 
+    this.userService.deleteTodo(item.todo_id)
+      .then((res: ResultVO) => {
+        if (res.result === 0) {
+          this.todoList.forEach((todo, index) => {
+            if( item.todo_id === todo.todo_id ){
+              this.todoList.splice(index, 1);
+            }
+          });
+          // todoList.splice();
+          alert(res.value);
+        }
+      });
   }
 
   modify(item: TodoVO) {
-    console.log("modify");
+    console.log('modify');
     this.userService.modifyTodo(item)
       .then((res: TodoVO) => {
         item.todo = res.todo;
