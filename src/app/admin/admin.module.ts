@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AdminComponent } from './admin/admin.component';
-import { HomeComponent } from './home/home.component';
-import { NewsComponent } from './news/news.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {AdminComponent} from './admin/admin.component';
+import {HomeComponent} from './home/home.component';
+import {NewsComponent} from './news/news.component';
 import {AdminRoutingModule} from './admin-routing';
-import {MatButtonModule, MatCardModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatPaginatorModule, MatToolbarModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {AdminService} from './admin.service';
 
@@ -16,8 +16,10 @@ import {AdminService} from './admin.service';
     MatCardModule,
     MatToolbarModule,
     MatButtonModule,
+    MatPaginatorModule,
   ],
   declarations: [AdminComponent, HomeComponent, NewsComponent],
-  providers:[AdminService]
+  providers: [AdminService]
 })
-export class AdminModule { }
+export class AdminModule {
+}
