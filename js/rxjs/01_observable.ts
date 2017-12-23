@@ -7,4 +7,4 @@ new Observable(observer => {
         ++count;
         observer.next(count);
     }, 1000);
-}).subscribe(data=>console.log(data));
+}).subscribe(data => console.log(data));

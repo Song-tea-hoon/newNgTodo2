@@ -1,5 +1,5 @@
 // call과 apply에서 this의 의미
-// 자바스크립트에서 오버라이딩이 존재하는가?
+// 자바스크립트에서 오버라이딩이 존재하는가? 존재하지않는다.
 function add(c, d){
   return this.a + this.b + c + d;
 }

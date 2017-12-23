@@ -4,7 +4,7 @@ function sortRestArgs(...theArgs) {
     return sortedArgs;
 }
 
-console.log(sortRestArgs(5,3,1));
+console.log(sortRestArgs(5,3,1,2, 323));
 
 
 // es5에서 arguments와 es6와의 차이점
