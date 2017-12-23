@@ -23,6 +23,7 @@ import {AngularFireModule} from "angularfire2";
 import {environment} from "../environments/environment";
 import {AngularFireAuth} from "angularfire2/auth";
 import {AuthGuardService} from "./auth/auth-guard.service";
+import { NicknameComponent } from './nickname/nickname.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {AuthGuardService} from "./auth/auth-guard.service";
     AngularComponent,
     HighlightDirective,
     MydatePipe,
-    LoginComponent
+    LoginComponent,
+    NicknameComponent
   ],
   imports: [
     BrowserModule,

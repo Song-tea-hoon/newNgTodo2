@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {IndexComponent} from "./index/index.component";
 import {HomeComponent} from "./home/home.component";
@@ -7,17 +7,21 @@ import {JqueryComponent} from "./jquery/jquery.component";
 import {AngularComponent} from "./angular/angular.component";
 import {LoginComponent} from "./auth/login/login.component";
 import {AuthGuardService} from "./auth/auth-guard.service";
+import {NicknameComponent} from "./nickname/nickname.component";
 
 const routes: Routes = [
-  { path: '', component: IndexComponent, children: [
-    {path: '', component: HomeComponent},
-    {path: 'jquery', component: JqueryComponent},
-    {path: 'angular', component: AngularComponent},
-    {path: 'login', component: LoginComponent},
-  ]},
+  {
+    path: '', component: IndexComponent, children: [
+      {path: '', component: HomeComponent},
+      {path: 'jquery', component: JqueryComponent},
+      {path: 'angular', component: AngularComponent},
+      {path: 'login', component: LoginComponent},
+      {path: 'nickname', component: NicknameComponent, canActivate:[AuthGuardService]},
+    ]
+  },
 
   // 참고: 향후 관리자 생성 모듈
-  { path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule', canLoad:[AuthGuardService]}
+  {path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule', canLoad: [AuthGuardService]}
 ];
 
 @NgModule({
@@ -28,4 +32,5 @@ const routes: Routes = [
     RouterModule
   ],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
