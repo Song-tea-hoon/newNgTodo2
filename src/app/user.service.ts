@@ -40,7 +40,7 @@ export class UserService {
   }
 
   login(params: MemberVO) {
-    return this.http.post(this.SERVER + '/api/login', params, {headers: this.headers});
+    return this.http.post(this.SERVER + '/api/login', params, {headers: this.headers}).toPromise();
   }
 
 }

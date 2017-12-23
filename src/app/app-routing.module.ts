@@ -8,6 +8,7 @@ import {AngularComponent} from "./angular/angular.component";
 import {LoginComponent} from "./auth/login/login.component";
 import {AuthGuardService} from "./auth/auth-guard.service";
 import {NicknameComponent} from "./nickname/nickname.component";
+import {RegisterComponent} from "./auth/register/register.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
       {path: 'angular', component: AngularComponent},
       {path: 'login', component: LoginComponent},
       {path: 'nickname', component: NicknameComponent, canActivate:[AuthGuardService]},
+      {path: 'register', component: RegisterComponent},
     ]
   },
 

@@ -8,7 +8,7 @@ import { JqueryComponent } from './jquery/jquery.component';
 import { AngularComponent } from './angular/angular.component';
 import { AppRoutingModule } from './/app-routing.module';
 import {
-  MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule,
+  MatButtonModule, MatCardModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule,
   MatToolbarModule
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -24,6 +24,7 @@ import {environment} from "../environments/environment";
 import {AngularFireAuth} from "angularfire2/auth";
 import {AuthGuardService} from "./auth/auth-guard.service";
 import { NicknameComponent } from './nickname/nickname.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { NicknameComponent } from './nickname/nickname.component';
     HighlightDirective,
     MydatePipe,
     LoginComponent,
-    NicknameComponent
+    NicknameComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,7 @@ import { NicknameComponent } from './nickname/nickname.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCheckboxModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [UserService, AngularFireAuth, AuthGuardService],
