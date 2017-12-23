@@ -19,6 +19,9 @@ import {FormsModule} from "@angular/forms";
 import { HighlightDirective } from './highlight.directive';
 import { MydatePipe } from './mydate.pipe';
 import { LoginComponent } from './auth/login/login.component';
+import {AngularFireModule} from "angularfire2";
+import {environment} from "../environments/environment";
+import {AngularFireAuth} from "angularfire2/auth";
 
 @NgModule({
   declarations: [
@@ -45,8 +48,9 @@ import { LoginComponent } from './auth/login/login.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [UserService],
+  providers: [UserService, AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

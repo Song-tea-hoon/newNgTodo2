@@ -8,11 +8,11 @@ export const environment = {
   // HOST: 'http://localhost:8080'
   HOST: 'http://www.javabrain.kr:8080',
   firebase: {
-    apiKey: "AIzaSyDv_fbYR_4OV_xYREjE0FTMLBI5pKGBeq8",
-    authDomain: "javabrain-d5728.firebaseapp.com",
-    databaseURL: "https://javabrain-d5728.firebaseio.com",
-    projectId: "javabrain-d5728",
-    storageBucket: "javabrain-d5728.appspot.com",
-    messagingSenderId: "864477969681"
+    apiKey: "AIzaSyDuKvlaVRGgmZGctRe81Wwa-3IwoP8E5ik",
+    authDomain: "angularteest1.firebaseapp.com",
+    databaseURL: "https://angularteest1.firebaseio.com",
+    projectId: "angularteest1",
+    storageBucket: "angularteest1.appspot.com",
+    messagingSenderId: "672098971008"
   }
 };
