@@ -4,6 +4,7 @@ import {Observable} from "rxjs/Observable";
 import * as firebase from "firebase";
 import {AngularFireAuth} from "angularfire2/auth";
 import {Router} from "@angular/router";
+import {AuthGuardService} from "../auth-guard.service";
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   authState: Observable<firebase.User>;
   currentUser: firebase.User = null;
 
-  constructor(public afAuth: AngularFireAuth, private router: Router) {
+  constructor(public afAuth: AngularFireAuth, private router: Router, private authService: AuthGuardService) {
     this.authState = this.afAuth.authState;
     this.authState.subscribe(user => {
       if (user) {
@@ -23,6 +24,9 @@ export class LoginComponent implements OnInit {
         this.currentUser = user;
         console.log(this.currentUser);
         // 소셜 로그인 성공후 서버에 인증 및 권한 획득
+        const memeber = new MemberVO();
+        memeber.email = this.currentUser['email'];
+        this.authService.login(memeber);
       } else {
         this.currentUser = null;
       }
