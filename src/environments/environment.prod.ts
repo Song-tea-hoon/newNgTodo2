@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  HOST:"http://www.javabrain.kr:8080"
+  HOST: 'http://www.javabrain.kr:8080'
 };

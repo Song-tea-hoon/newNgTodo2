@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {environment} from '../environments/environment';
-import {TodoVO} from './domain/todo.vo';
+import { Injectable } from '@angular/core';
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {environment} from "../environments/environment";
+import {TodoVO} from "./domain/todo.vo";
 
 @Injectable()
 export class UserService {
@@ -21,9 +21,8 @@ export class UserService {
   }
 
   addTodo(params: TodoVO) {
-    return this.http.post(this.SERVER + '/api/todo', JSON.stringify(params), {headers: this.headers})
+    return this.http.post(this.SERVER + '/api/todo', params, {headers: this.headers})
       .toPromise();
-
   }
 
   modifyTodo(params: TodoVO) {

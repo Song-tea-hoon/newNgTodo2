@@ -2,12 +2,12 @@ $buttonColor: #337ab7;
 $buttonDark: darken($buttonColor, 10%);
 $buttonDarker: darken($buttonDark, 10%);
 
-@mixin prefix($top, $left){
-  -webkit-transform: translate($top, $left);
-  -moz-transform: translate($top, $left);
-  -ms-transform: translate($top, $left);
-  -o-transform: translate($top, $left);
-  transform: translate($top, $left);
+@mixin transform($x, $y) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+  transform: translate($x, $y);
 }
 
 button.active {
@@ -22,6 +22,6 @@ button.active {
   }
   &:active {
     box-shadow: none;
-    @include prefix(4px, 4px);
+    @include transform(4px, 4px);
   }
 }

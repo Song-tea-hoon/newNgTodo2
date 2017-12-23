@@ -5,9 +5,11 @@
   <mat-card-content>
     <div fxLayout="row">
       <input type="text" placeholder="할일" id="input_todo" fxFlex="4 1 auto">
-      <button class="active" type="button" fxFlex="1 1 auto">추가</button>
+      <button type="button" fxFlex="1 1 auto" class="active">추가</button>
     </div>
+
     <hr>
+
     <table class="table">
       <thead>
       <tr>
@@ -18,20 +20,7 @@
         <th>삭제</th>
       </tr>
       </thead>
-      <tbody>
-      <tr *ngFor="let item of todoList">
-        <td>
-          <input type="checkbox" (change)="update(item)">
-        </td>
-        <td [class.todo_canceled]="item.isFinished">{{item.todo}}</td>
-        <td>{{item.created}}</td>
-        <td>{{item.updated}}</td>
-        <td>
-          <button mat-raised-button color="warn">삭제</button>
-        </td>
-      </tr>
-      </tbody>
+      <tbody></tbody>
     </table>
   </mat-card-content>
 </mat-card>
-

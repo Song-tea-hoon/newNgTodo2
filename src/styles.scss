@@ -1,4 +1,4 @@
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import 'assets/styles/app';
 
 * {
@@ -7,7 +7,6 @@
   box-sizing: border-box;
   word-break: break-all;
 }
-
 html, body {
   margin: 0;
   padding: 0;
@@ -20,7 +19,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
 .table {
   margin: 0;
   width: 100%;
@@ -38,6 +36,9 @@ table {
   thead {
     background-color: #dddddd;
   }
+}
+.mat-block {
+  width: 100%;
 }
 
 @media screen and (max-width: 599px) {

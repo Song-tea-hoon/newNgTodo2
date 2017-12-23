@@ -3,12 +3,28 @@
     <mat-card-title>My Todo's</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form ngNativeValidate #myForm="ngForm" (submit)="addTodo()">
+<!--    <div fxLayout="row" fxLayoutAlign="start start">
+
+      <form ngNativeValidate #myForm="ngForm" (submit)="add_todo()">
+        <div fxLayout="row" fxLayoutAlign="center start">
+          <mat-form-field fxFlex="4 1 auto">
+            <input matInput placeholder="할일" [(ngModel)]="todo" name="todo" required>
+          </mat-form-field>
+          <button type="submit" mat-raised-button color="primary" fxFlex="1 1 auto">추가</button>
+        </div>
+      </form>
+
+    </div>-->
+
+    <form #myForm="ngForm" (ngSubmit)="addTodo()">
       <div fxLayout="row" fxLayoutAlign="center start">
         <mat-form-field fxFlex="4 1 auto">
-          <input matInput placeholder="할일" [(ngModel)]="newTodo.todo" name="todo" required>
+          <input matInput placeholder="할일" [(ngModel)]="newTodo.todo" name="todo"
+                 #name="ngModel" required>
+          <mat-hint align="start" style="color: red;">{{!name.value? '할일을 입력하세요' : ''}}</mat-hint>
         </mat-form-field>
-        <button type="submit" mat-raised-button color="primary" fxFlex="1 1 auto">추가</button>
+        <button type="submit" mat-raised-button color="primary" fxFlex="1 1 auto"
+          [disabled]="!myForm.form.valid">추가</button>
       </div>
     </form>
 
@@ -26,14 +42,14 @@
       </tr>
       </thead>
       <tbody>
-      <ng-template ngFor let-item [ngForOf]="todoList">
-        <tr *ngIf="!item.isEdited" [@flyInOut] = "'in'" appHighlight [highlightColor]="'#ea5b5b'">
+      <ng-template ngFor let-item [ngForOf]="todoList" let-index>
+        <tr *ngIf="!item.isEdited" [@flyInOut] = "'in'" appHighlight [highlightColor]="'#C8FFFF'">
           <td>
             {{item.isFinished ? '완료' : '미완료'}}
           </td>
           <td [class.todo_canceled]="item.isFinished">{{item.todo}}</td>
           <td>{{item.created | mydate: '16'}}</td>
-          <td>{{item.updated | date:'short'}}</td>
+          <td>{{item.updated | date: 'yyyy-MM-dd aa hh:mm'}}</td>
           <td>
             <button mat-raised-button color="accent" (click)="save(item)">수정</button>
             <button mat-raised-button color="warn" (click)="remove(item)">삭제</button>
@@ -54,6 +70,7 @@
           </td>
         </tr>
       </ng-template>
+
       </tbody>
     </table>
   </mat-card-content>
