@@ -3,7 +3,7 @@ import {AdminService} from "../admin.service";
 import {NewsVO} from "../../domain/news.vo";
 import {ResultVO} from "../../domain/result.vo";
 import {PageVO} from "../../domain/page.vo";
-import {Router} from "@angular/router";
+import {NavigationStart, Router} from "@angular/router";
 
 @Component({
   selector: 'app-news',
@@ -18,6 +18,16 @@ export class NewsComponent implements OnInit {
 
   ngOnInit() {
     this.findNews();
+
+    this.router.events.subscribe(events => {
+      // 부모, 자식 경로가 호출될때마다 여러가지 이벤트 발생. NavigationStart -> NavigationReconized -> NavigationEnd
+      if (events instanceof NavigationStart) {
+        console.log('nagigation start:' + events.url);
+        if (events.url === '/admin/news') {
+          this.findNews();
+        }
+      }
+    });
   }
 
   findNews() {

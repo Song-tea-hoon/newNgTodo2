@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {NewsVO} from "../../../domain/news.vo";
 import {AdminService} from "../../admin.service";
 import {MatDialog, MatSnackBar} from "@angular/material";
@@ -15,7 +15,8 @@ export class ViewComponent implements OnInit {
   news: NewsVO;
 
   constructor(private route: ActivatedRoute, private adminService: AdminService,
-              private dialog: MatDialog, private snackBar: MatSnackBar) {
+              private dialog: MatDialog, private snackBar: MatSnackBar,
+              private router: Router) {
     console.log('view constructor');
   }
 
@@ -45,6 +46,7 @@ export class ViewComponent implements OnInit {
               this.snackBar.open('삭제되었습니다.', null, {
                 duration: 3000
               });
+              this.router.navigateByUrl('/admin/news');
             }
           });
       }

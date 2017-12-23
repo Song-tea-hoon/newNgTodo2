@@ -18,6 +18,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import { HighlightDirective } from './highlight.directive';
 import { MydatePipe } from './mydate.pipe';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MydatePipe } from './mydate.pipe';
     JqueryComponent,
     AngularComponent,
     HighlightDirective,
-    MydatePipe
+    MydatePipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
