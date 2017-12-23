@@ -6,6 +6,7 @@ import {HomeComponent} from "./home/home.component";
 import {JqueryComponent} from "./jquery/jquery.component";
 import {AngularComponent} from "./angular/angular.component";
 import {LoginComponent} from "./auth/login/login.component";
+import {AuthGuardService} from "./auth/auth-guard.service";
 
 const routes: Routes = [
   { path: '', component: IndexComponent, children: [
@@ -16,7 +17,7 @@ const routes: Routes = [
   ]},
 
   // 참고: 향후 관리자 생성 모듈
-  { path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule'}
+  { path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule', canLoad:[AuthGuardService]}
 ];
 
 @NgModule({
